@@ -3,6 +3,7 @@
 
 int max(int [], int);
 int min(int [], int);
+float average(int [], int);
 
 /*highest num in array*/
 int max(int ar[], int count)
@@ -19,7 +20,7 @@ int max(int ar[], int count)
 }
 
 /*lowest num in array*/
-int max(int ar[], int count)
+int min(int ar[], int count)
 {
   int lowest=-1;
   for (int i=0;i<count;i++)
@@ -31,3 +32,16 @@ int max(int ar[], int count)
   }
   return lowest;
 }
+
+/*average of an array*/
+float average(int ar[], int count)
+{
+  float sum =0;
+  for (int i=0;i<count;i++)
+  {
+    sum=sum+ar[i];
+  }
+  avg=(float)(sum/count);
+  return avg;
+}
+  
