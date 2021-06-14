@@ -87,7 +87,7 @@ int factors(int num, int ar[])
   }
   for(int j=0;j<c;j++)
   { 
-    flag=0;
+    int flag=0;
     int ele=a[j];
     for (int k=2;k<ele/2;k++)
     { 
@@ -105,5 +105,6 @@ int factors(int num, int ar[])
       count=count+1;
       u=u+1;
     }
-   return count;
+  }
+  return count;
 }
