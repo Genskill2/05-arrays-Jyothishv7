@@ -4,6 +4,7 @@
 int max(int [], int);
 int min(int [], int);
 float average(int [], int);
+int mode(int [], int);
 
 /*highest num in array*/
 int max(int ar[], int count)
@@ -22,7 +23,7 @@ int max(int ar[], int count)
 /*lowest num in array*/
 int min(int ar[], int count)
 {
-  int lowest=-1;
+  int lowest=ar[1];
   for (int i=0;i<count;i++)
   {
     if(ar[i]<lowest)
@@ -44,4 +45,28 @@ float average(int ar[], int count)
   float avg=(float)(sum/count);
   return avg;
 }
+
+/*mode*/
+int mode(int a[], int n)
+{
+  int maxValue = 0, maxCount = 0, i, j;
+  for (i = 0; i < n; ++i) 
+  {
+      int count = 0;
+      for (j = 0; j < n; ++j)
+      {
+         if (a[j] == a[i])
+         ++count;
+      }
+      
+      if (count > maxCount) 
+      {
+         maxCount = count;
+         maxValue = a[i];
+      }
+   }
+
+   return maxValue;
+}
+  
   
