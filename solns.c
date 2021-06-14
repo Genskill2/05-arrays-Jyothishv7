@@ -41,7 +41,7 @@ float average(int ar[], int count)
   {
     sum=sum+ar[i];
   }
-  avg=(float)(sum/count);
+  float avg=(float)(sum/count);
   return avg;
 }
   
