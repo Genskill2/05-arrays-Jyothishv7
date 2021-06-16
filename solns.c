@@ -70,40 +70,40 @@ int mode(int a[], int n)
    return maxValue;
 }
 /*prime factors*/
-int factors(int num, int ar[])
-{
-  int c=0,u=0;
-  int a[num/2];
-  int count=0;
-  
-  for(int i =2; i<num/2;i++)
-  {
-    if(num%i==0)
-    {
-      a[c]=i;
-      c=c+1;
-    }
-  }
-  for(int j=0;j<c;j++)
-  { 
-    int flag=0;
-    int ele=a[j];
-    for (int k=2;k<ele/2;k++)
+int factors(int n, int ar[])
+{ 
+    int k=0;
+    int count=0;
+    // Print the number of 2s that divide n 
+    while (n%2 == 0) 
     { 
-      if (ele==2)
-        flag=0;
-      else if(ele%k==0)
+        ar[k] =2;
+        k=k+1;
+      count=count+1
+        n = n/2; 
+    } 
+    
+    // n must be odd at this point.  So we can skip  
+    // one element (Note i = i +2) 
+    for (int i = 3; i <= sqrt(n); i = i+2) 
+    { 
+        // While i divides n, print i and divide n 
+        while (n%i == 0) 
+        { 
+            ar[k] =i;
+            k=k+1;
+            count=count+1
+            n = n/i; 
+        } 
+    } 
+    
+    // This condition is to handle the case when n  
+    // is a prime number greater than 2 
+    if (n > 2) 
       {
-        flag=1;
-        break;
+        ar[k] =n;
+        count=count+1
       }
-    }
-    if(flag==0)
-    {
-      ar[u]= ele;
-      count=count+1;
-      u=u+1;
-    }
-  }
-  return count;
-}
+  
+    return count;
+} 
