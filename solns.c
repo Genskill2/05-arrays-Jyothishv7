@@ -1,5 +1,6 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
+# include <math.h>
 
 int max(int [], int);
 int min(int [], int);
@@ -79,7 +80,7 @@ int factors(int n, int ar[])
     { 
         ar[k] =2;
         k=k+1;
-      count=count+1
+        count=count+1;
         n = n/2; 
     } 
     
@@ -92,7 +93,7 @@ int factors(int n, int ar[])
         { 
             ar[k] =i;
             k=k+1;
-            count=count+1
+            count=count+1;
             n = n/i; 
         } 
     } 
@@ -102,7 +103,7 @@ int factors(int n, int ar[])
     if (n > 2) 
       {
         ar[k] =n;
-        count=count+1
+        count=count+1;
       }
   
     return count;
